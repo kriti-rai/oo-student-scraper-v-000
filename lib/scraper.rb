@@ -23,7 +23,7 @@ class Scraper
           profile_hash[:linkedin] = social
       elsif social.include?("github")
           profile_hash[:github] = social
-      else
+      elsif !social.include?("youtube") && !social.include?("facebook")
         profile_hash[:blog] = social
       end
     end

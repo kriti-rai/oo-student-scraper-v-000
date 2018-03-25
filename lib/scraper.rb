@@ -28,7 +28,7 @@ class Scraper
       end
     end
     quote = profile.css(".profile-quote").text
-    bio = profile.css(".description-holder").css("p").text
+    bio = profile.css(".description-holder").css("p").text.gsub(/\n/, "")
     if quote
       profile_hash[:profile_quote] = quote
     end

@@ -27,7 +27,7 @@ class Scraper
         profile_hash[:blog] = social
       end
     end
-    quote = profile.css(".profile-quote").text
+    quote = profile.css(".profile-quote").text.gsub(/\n/, "")
     bio = profile.css(".description-holder").css("p").text.gsub(/\n/, "")
     if quote
       profile_hash[:profile_quote] = quote
